@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kelvin Patrick Njoroge | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Light/Dark Mode Toggle -->
+  <button id="theme-toggle">🌙 Toggle Theme</button>
+  <div id="tsparticles"></div>
+
+  <!-- Header Section -->
+  <header class="hero animate-fade-in">
+    <div class="overlay">
+      <h1 class="slide-in">Kelvin Patrick Njoroge</h1>
+      <p class="slide-in delay-1">Graphic Designer & Social Media Manager</p>
+      <nav class="slide-in delay-2">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#skills">Skills</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in-on-scroll">
+    <h2>About Me</h2>
+    <p>A dedicated and creative individual with 4+ years of work experience in Graphic Designing and Video Editing. Skilled in developing and implementing design strategies to enhance brand images. Passionate about content creation, web development, social media marketing, and customer engagement.</p>
+    <a href="Kelvin_Njoroge_Resume.pdf" download class="resume-button">Download My Resume</a>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="fade-in-on-scroll">
+    <h2>Services</h2>
+    <ul>
+      <li>🎨 Graphic Design (Logos, Posters, Flyers, Menus, Banners)</li>
+      <li>🎥 Video Editing (Commercials, Podcasts, Event Coverage)</li>
+      <li>📱 Social Media Management (Strategy, Content, Engagement)</li>
+      <li>🧠 Branding & Identity Development</li>
+      <li>💼 Product Marketing & Review Design</li>
+      <li>🌐 Web Design & Development</li>
+      <li>📝 Content Creation & Copywriting</li>
+      <li>🙋 Customer Engagement & Support</li>
+    </ul>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="fade-in-on-scroll">
+    <h2>Portfolio</h2>
+    <p><a href="https://www.behance.net/kelvinnjoroge" target="_blank">Click here to view my portfolio</a></p>
+    <div class="gallery">
+                      </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="fade-in-on-scroll">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li class="skill-item delay-1">Graphic Design</li>
+      <li class="skill-item delay-2">Web Development</li>
+      <li class="skill-item delay-3">Marketing & Branding</li>
+      <li class="skill-item delay-4">Content Creation</li>
+      <li class="skill-item delay-5">Social Media Management</li>
+      <li class="skill-item delay-5">Video Editing</li>
+      <li class="skill-item delay-5">Customer Service</li>
+      <li class="skill-item delay-5">Adobe Photoshop, Illustrator, Premiere Pro</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="fade-in-on-scroll">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+      <h3>Denis Muyo</h3>
+      <p><strong>CEO, Versatech Solutions</strong> | Contact: 0712165017</p>
+      <blockquote>“Kelvin Patrick has been in a position to deliver high quality and engaging social media graphics for my company, even on tight deadlines.”</blockquote>
+    </div>
+    <div class="testimonial">
+      <h3>Bramuel Simiyu</h3>
+      <p><strong>Content Writer</strong> | Contact: +254100789487</p>
+      <blockquote>“Kelvin has helped transform my brand from non-existent to an existent brand. I would highly recommend his services.”</blockquote>
+    </div>
+    <div class="testimonial">
+      <h3>Aron Lang’at</h3>
+      <p><strong>Manager, Namaiyana High Table Bar & Restaurant</strong> | Contact: +254796162705</p>
+      <blockquote>“Kelvin has demonstrated his unique skills in our business, from creating stunning social media graphics to boosting our online presence. Great guy that one!”</blockquote>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in-on-scroll">
+    <h2>Contact</h2>
+    <form id="contact-form" action="mailto:designernjosh@gmail.com" method="POST" enctype="text/plain">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="animate-fade-in">
+    <p>&copy; 2025 Kelvin Patrick Njoroge | All Rights Reserved</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: true, zIndex: -1 },
+      particles: {
+        number: { value: 80 },
+        color: { value: "#0077cc" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { quantity: 4 }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
